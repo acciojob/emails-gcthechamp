@@ -18,7 +18,7 @@ public class Email {
         return password;
     }
 
-    public void changePassword(String oldPassword, String newPassword){
+    public void changePassword(String oldPassword, String newPassword) {
 
         //Change password only if the oldPassword is equal to current password and the new password meets all of the following:
         // 1. It contains at least 8 characters
@@ -31,25 +31,22 @@ public class Email {
         boolean atleastLower = false;
         boolean atleastDigit = false;
         boolean atleastSpecial = false;
-        if(oldPassword == password && newPassword.length() >= 8)
-        {
-            for(int i=0; i<newPassword.length(); i++)
-            {
+        if (oldPassword == password && newPassword.length() >= 8) {
+            for (int i = 0; i < newPassword.length(); i++) {
                 char ch = newPassword.charAt(i);
-                if(ch>='A' && ch<='Z')
+                if (ch >= 'A' && ch <= 'Z')
                     atleastUpper = true;
 
-                else if(ch>='a' && ch<='z')
+                else if (ch >= 'a' && ch <= 'z')
                     atleastLower = true;
 
-                else if(ch>='0' && ch<='9')
+                else if (ch >= '0' && ch <= '9')
                     atleastDigit = true;
 
                 else
                     atleastSpecial = true;
 
-                if(atleastUpper == true && atleastLower == true && atleastDigit == true && atleastSpecial == true)
-                {
+                if (atleastUpper == true && atleastLower == true && atleastDigit == true && atleastSpecial == true) {
                     password = newPassword;
                     break;
                 }
